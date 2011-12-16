@@ -1,0 +1,17 @@
+____________________________________README_____________________________________
+qsort.c is an implementation of the Quicksort algorithm. The main function 
+sorts an array of integers initialized by the user. The quicksort() function
+takes an int array a, an int low and an int high as parameters. After the user
+enters an amount of numbers dictated by the macro N, and these are used to 
+populate the int array a, quicksort() is called on a, low = 0 and high = (N-1).
+quicksort() itself essentailly consists of a call to the helper function 
+split(), followed by recursive calls to itself on two unsorted halves of the 
+array a, minus the pivot element. Every element of the first half is guaranteed 
+to be less than or equal to every element in the second half. The majority of 
+the work takes place in split(), where int low is arbitrarily assigned as the 
+pivot element. Element a[high] and element a[low] are iteratively decremented 
+and incremented, respectively, while the pivot element is <= a[high] or 
+>= a[low], respectively. Then, elements are inserted into the 'holes' of the 
+array, with the result that split() returns the index around which the original
+array was slit, lesser elements in one group, greater in the other. The recursion
+ends when low >= high, signifying that what remains of the array is sorted. 
